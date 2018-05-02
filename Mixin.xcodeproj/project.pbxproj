@@ -51,6 +51,15 @@
 		27FE22B81FC70399006F2AA5 /* SignalKeyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE22B71FC70399006F2AA5 /* SignalKeyAPI.swift */; };
 		7B075CCF1FC0A98B005315A2 /* ConversationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B075CCE1FC0A98B005315A2 /* ConversationTableView.swift */; };
 		7B075CD11FC0B268005315A2 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B075CD01FC0B268005315A2 /* MessageCell.swift */; };
+		7B082E312099962600C630E8 /* AttachmentStreamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B082E302099962600C630E8 /* AttachmentStreamTests.swift */; };
+		7B082E322099973100C630E8 /* AttachmentCryptography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61EB8B20978855001C1985 /* AttachmentCryptography.swift */; };
+		7B082E332099973100C630E8 /* AttachmentDecryptingOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61EB8D20978855001C1985 /* AttachmentDecryptingOutputStream.swift */; };
+		7B082E342099973100C630E8 /* AttachmentEncryptingInputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61EB8C20978855001C1985 /* AttachmentEncryptingInputStream.swift */; };
+		7B082E362099981C00C630E8 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C47491FA0BECA00A07C71 /* DataExtension.swift */; };
+		7B082E372099990A00C630E8 /* OWSError.m in Sources */ = {isa = PBXBuildFile; fileRef = DF955BFC1FEBDAEE00DF98A2 /* OWSError.m */; };
+		7B082E382099990A00C630E8 /* NSData+OWSConstantTimeCompare.m in Sources */ = {isa = PBXBuildFile; fileRef = DF955C001FEBDBA500DF98A2 /* NSData+OWSConstantTimeCompare.m */; };
+		7B082E392099990A00C630E8 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = DF955C031FEBDBD400DF98A2 /* NSData+Base64.m */; };
+		7B082E3A2099990A00C630E8 /* Cryptography.m in Sources */ = {isa = PBXBuildFile; fileRef = DF955BF91FEBD5B500DF98A2 /* Cryptography.m */; };
 		7B09E5581FD1264C002E45D3 /* TextMessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09E5571FD1264C002E45D3 /* TextMessageLabel.swift */; };
 		7B09E55A1FD157EB002E45D3 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09E5591FD157EB002E45D3 /* MessageViewModel.swift */; };
 		7B09E55C1FD15B9B002E45D3 /* PhotoMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09E55B1FD15B9B002E45D3 /* PhotoMessageViewModel.swift */; };
@@ -359,10 +368,6 @@
 		DF8EF6BA2033FD1800E99CE8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5D9F2D1F9C941D0036D5FD /* AudioToolbox.framework */; };
 		DF8EF6BC2034737F00E99CE8 /* payment_success.caf in Resources */ = {isa = PBXBuildFile; fileRef = DF8EF6BB2034737F00E99CE8 /* payment_success.caf */; };
 		DF8F3F23207F52F9007DFDB4 /* MessageJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8F3F22207F52F9007DFDB4 /* MessageJob.swift */; };
-		DF955BFA1FEBD5B500DF98A2 /* Cryptography.m in Sources */ = {isa = PBXBuildFile; fileRef = DF955BF91FEBD5B500DF98A2 /* Cryptography.m */; };
-		DF955BFE1FEBDAEE00DF98A2 /* OWSError.m in Sources */ = {isa = PBXBuildFile; fileRef = DF955BFC1FEBDAEE00DF98A2 /* OWSError.m */; };
-		DF955C011FEBDBA500DF98A2 /* NSData+OWSConstantTimeCompare.m in Sources */ = {isa = PBXBuildFile; fileRef = DF955C001FEBDBA500DF98A2 /* NSData+OWSConstantTimeCompare.m */; };
-		DF955C041FEBDBD400DF98A2 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = DF955C031FEBDBD400DF98A2 /* NSData+Base64.m */; };
 		DF9E66E5205B9AF300F1A0B9 /* HiddenAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E66E4205B9AF300F1A0B9 /* HiddenAssetViewController.swift */; };
 		DF9E66E7205C0A7E00F1A0B9 /* AddressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E66E6205C0A7E00F1A0B9 /* AddressRequest.swift */; };
 		DF9E66ED205C16AD00F1A0B9 /* WithdrawalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E66EC205C16AD00F1A0B9 /* WithdrawalRequest.swift */; };
@@ -446,6 +451,16 @@
 		F8E633655B9F4AE705C65155 /* Pods_Mixin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23987C4F141F7C6E533A683D /* Pods_Mixin.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7B082E2B2099960700C630E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277FF6F71F909A1200DBB2EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 277FF6FE1F909A1200DBB2EB;
+			remoteInfo = Mixin;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		273E29431FCBED580043A6F9 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -511,6 +526,10 @@
 		621D5146A79BB7A673B026F9 /* Pods-mixin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mixin.release.xcconfig"; path = "Pods/Target Support Files/Pods-mixin/Pods-mixin.release.xcconfig"; sourceTree = "<group>"; };
 		7B075CCE1FC0A98B005315A2 /* ConversationTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableView.swift; sourceTree = "<group>"; };
 		7B075CD01FC0B268005315A2 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		7B082E262099960700C630E8 /* MixinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MixinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B082E2A2099960700C630E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B082E302099962600C630E8 /* AttachmentStreamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentStreamTests.swift; sourceTree = "<group>"; };
+		7B082E352099974B00C630E8 /* MixinTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MixinTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		7B09E5571FD1264C002E45D3 /* TextMessageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageLabel.swift; sourceTree = "<group>"; };
 		7B09E5591FD157EB002E45D3 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		7B09E55B1FD15B9B002E45D3 /* PhotoMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMessageViewModel.swift; sourceTree = "<group>"; };
@@ -931,6 +950,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7B082E232099960700C630E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -1026,7 +1052,6 @@
 			children = (
 				DF5CDA78205005EE004A52BA /* Database */,
 				DF503D3D1FED05F600C008E7 /* Storage */,
-				DF8A96921FD7CE9300FD38D9 /* SignalKit */,
 				7B61EB8A209787DD001C1985 /* Attachment */,
 				27B84EE41FCDA34A0081DD12 /* MD5Digest.swift */,
 				27DA337E1FE8F92900A4D16F /* SignalProtocol.swift */,
@@ -1041,6 +1066,7 @@
 			isa = PBXGroup;
 			children = (
 				277FF7011F909A1200DBB2EB /* Mixin */,
+				7B082E272099960700C630E8 /* MixinTests */,
 				277FF7001F909A1200DBB2EB /* Products */,
 				506A45AFF37DF0AFA7DD4EEE /* Pods */,
 				DBADD0FED15BCB65F6FF70EB /* Frameworks */,
@@ -1051,6 +1077,7 @@
 			isa = PBXGroup;
 			children = (
 				277FF6FF1F909A1200DBB2EB /* Mixin.app */,
+				7B082E262099960700C630E8 /* MixinTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1083,6 +1110,17 @@
 				8C43D9D96FCB101481DFD90F /* Pods-Mixin.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7B082E272099960700C630E8 /* MixinTests */ = {
+			isa = PBXGroup;
+			children = (
+				DF8A96921FD7CE9300FD38D9 /* SignalKit */,
+				7B082E302099962600C630E8 /* AttachmentStreamTests.swift */,
+				7B082E352099974B00C630E8 /* MixinTests-Bridging-Header.h */,
+				7B082E2A2099960700C630E8 /* Info.plist */,
+			);
+			path = MixinTests;
 			sourceTree = "<group>";
 		};
 		7B14568B1FCC17AD001B6DED /* Model */ = {
@@ -1911,13 +1949,31 @@
 			productReference = 277FF6FF1F909A1200DBB2EB /* Mixin.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7B082E252099960700C630E8 /* MixinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B082E2F2099960700C630E8 /* Build configuration list for PBXNativeTarget "MixinTests" */;
+			buildPhases = (
+				7B082E222099960700C630E8 /* Sources */,
+				7B082E232099960700C630E8 /* Frameworks */,
+				7B082E242099960700C630E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B082E2C2099960700C630E8 /* PBXTargetDependency */,
+			);
+			name = MixinTests;
+			productName = MixinTests;
+			productReference = 7B082E262099960700C630E8 /* MixinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		277FF6F71F909A1200DBB2EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = Mixin;
 				TargetAttributes = {
@@ -1937,6 +1993,11 @@
 							};
 						};
 					};
+					7B082E252099960700C630E8 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 277FF6FE1F909A1200DBB2EB;
+					};
 				};
 			};
 			buildConfigurationList = 277FF6FA1F909A1200DBB2EB /* Build configuration list for PBXProject "Mixin" */;
@@ -1954,6 +2015,7 @@
 			projectRoot = "";
 			targets = (
 				277FF6FE1F909A1200DBB2EB /* Mixin */,
+				7B082E252099960700C630E8 /* MixinTests */,
 			);
 		};
 /* End PBXProject section */
@@ -2016,6 +2078,13 @@
 				DF8EF6B52032D1D700E99CE8 /* DAppPayView.xib in Resources */,
 				DF8EF6BC2034737F00E99CE8 /* payment_success.caf in Resources */,
 				9BB351691FB1A94100EDDD2C /* ConversationDateHeaderView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B082E242099960700C630E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2227,7 +2296,6 @@
 				7B0F8520201494DA00C02388 /* StickerPageViewController.swift in Sources */,
 				7B0B01981FEA63FA000EEE4F /* StrangerTipsView.swift in Sources */,
 				DF22D94B1FDD33E700243CAE /* TransferPlainData.swift in Sources */,
-				DF955C011FEBDBA500DF98A2 /* NSData+OWSConstantTimeCompare.m in Sources */,
 				DF3FF05B20123BD6000A0C0A /* FileDownloadJob.swift in Sources */,
 				7B2E3E521FA07F7B00DDDDEB /* CountryCell.swift in Sources */,
 				DFF353161FEEBC4700058453 /* SnapshotCell.swift in Sources */,
@@ -2309,7 +2377,6 @@
 				DF8CECDD1FC302EB00E40064 /* TransferTypeView.swift in Sources */,
 				7B0B01921FEA19BA000EEE4F /* DecryptionFailedMessageViewModel.swift in Sources */,
 				7B2E3E4B1FA07F4500DDDDEB /* SelectCountryViewController.swift in Sources */,
-				DF955BFA1FEBD5B500DF98A2 /* Cryptography.m in Sources */,
 				7BA931F51FC08DF4005DF478 /* TextMessageCell.swift in Sources */,
 				DFE63C9A1FC6B15600D6E028 /* SignalKeyRequest.swift in Sources */,
 				DF2A3CDA20173F2D0095F024 /* TransferStickerData.swift in Sources */,
@@ -2417,7 +2484,6 @@
 				DF3C474A1FA0BECA00A07C71 /* DataExtension.swift in Sources */,
 				DF5D9F2C1F9C7A9D0036D5FD /* APIError.swift in Sources */,
 				7BEFDC1D1FB07F1600F66885 /* GroupNameCell.swift in Sources */,
-				DF955BFE1FEBDAEE00DF98A2 /* OWSError.m in Sources */,
 				DFF353191FEEC83100058453 /* WalletUserDefault.swift in Sources */,
 				DF6DB83D2024EAD10060CF31 /* PaymentResponse.swift in Sources */,
 				7B4D112A205BA64B0074BF60 /* Address.swift in Sources */,
@@ -2457,7 +2523,6 @@
 				DF1070912048103000E20047 /* BlazeMessageDAO.swift in Sources */,
 				DF8CECE91FC411AB00E40064 /* NotificationViewController.swift in Sources */,
 				DFE356B81FB4994200E0E3A8 /* SettingViewController.swift in Sources */,
-				DF955C041FEBDBD400DF98A2 /* NSData+Base64.m in Sources */,
 				7BB559551FA89D5D0013A719 /* ResignationRefusingTextField.swift in Sources */,
 				DF503D381FECF98900C008E7 /* SignedPreKey.swift in Sources */,
 				7B1CCBA31FEE63C300137644 /* UserRequest.swift in Sources */,
@@ -2492,7 +2557,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7B082E222099960700C630E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B082E342099973100C630E8 /* AttachmentEncryptingInputStream.swift in Sources */,
+				7B082E322099973100C630E8 /* AttachmentCryptography.swift in Sources */,
+				7B082E332099973100C630E8 /* AttachmentDecryptingOutputStream.swift in Sources */,
+				7B082E312099962600C630E8 /* AttachmentStreamTests.swift in Sources */,
+				7B082E372099990A00C630E8 /* OWSError.m in Sources */,
+				7B082E3A2099990A00C630E8 /* Cryptography.m in Sources */,
+				7B082E392099990A00C630E8 /* NSData+Base64.m in Sources */,
+				7B082E362099981C00C630E8 /* DataExtension.swift in Sources */,
+				7B082E382099990A00C630E8 /* NSData+OWSConstantTimeCompare.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B082E2C2099960700C630E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 277FF6FE1F909A1200DBB2EB /* Mixin */;
+			targetProxy = 7B082E2B2099960700C630E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		277FF70D1F909A1200DBB2EB /* LaunchScreen.storyboard */ = {
@@ -2754,6 +2843,42 @@
 			};
 			name = Release;
 		};
+		7B082E2D2099960700C630E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5EL4S7LCG6;
+				INFOPLIST_FILE = MixinTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yy.wu.MixinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MixinTests/MixinTests-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mixin.app/Mixin";
+			};
+			name = Debug;
+		};
+		7B082E2E2099960700C630E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5EL4S7LCG6;
+				INFOPLIST_FILE = MixinTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yy.wu.MixinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MixinTests/MixinTests-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mixin.app/Mixin";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2771,6 +2896,15 @@
 			buildConfigurations = (
 				277FF7141F909A1200DBB2EB /* Debug */,
 				277FF7151F909A1200DBB2EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B082E2F2099960700C630E8 /* Build configuration list for PBXNativeTarget "MixinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B082E2D2099960700C630E8 /* Debug */,
+				7B082E2E2099960700C630E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
