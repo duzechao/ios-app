@@ -100,12 +100,22 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="R8t-d2-xwn"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="SWB-Q6-Xp6" customClass="LeftAlignedFlowLayout" customModule="Mixin" customModuleProvider="target">
-                        <size key="itemSize" width="72" height="115"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
-                    </collectionViewFlowLayout>
+                    <collectionViewLayout key="collectionViewLayout" id="1JG-Gc-dgG" customClass="HorizontalSingleLineFlowLayout" customModule="Mixin" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="leftMargin">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="rightMargin">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="itemWidth">
+                                <real key="value" value="72"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="itemHeight">
+                                <real key="value" value="115"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </collectionViewLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wd1-Fw-R82">
                     <rect key="frame" x="0.0" y="247" width="375" height="1"/>
